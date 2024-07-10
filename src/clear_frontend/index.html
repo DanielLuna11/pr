@@ -1,17 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>IC Hello Starter</title>
-  <base href="/" />
-  <link rel="icon" href="/favicon.ico" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purificador de Agua - Sensores</title>
+    <!-- MDBootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css"
+      rel="stylesheet"
+    />
 </head>
-
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1>Datos de Sensores de Purificador de Agua</h1>
+            </div>
+            <div class="card-body">
+                <form id="sensorForm">
+                    <div class="form-group mb-4">
+                        <label for="ph">pH:</label>
+                        <input type="number" id="ph" name="ph" class="form-control" step="0.01" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="turbidez">Turbidez:</label>
+                        <input type="number" id="turbidez" name="turbidez" class="form-control" step="0.01" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Guardar Datos</button>
+                </form>
+            </div>
+        </div>
+        <div class="card mt-5">
+            <div class="card-header text-center">
+                <h2>Historial de Datos</h2>
+            </div>
+            <div class="card-body">
+                <ul id="dataList" class="list-group"></ul>
+            </div>
+        </div>
+    </div>
 
+    <!-- MDBootstrap JS -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"
+    ></script>
+    
+    <script>
+        document.getElementById('sensorForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const ph = document.getElementById('ph').value;
+            const turbidez = document.getElementById('turbidez').value;
+
+            const dataList = document.getElementById('dataList');
+            const listItem = document.createElement('li');
+            listItem.textContent = `pH: ${ph}, Turbidez: ${turbidez}`;
+            listItem.className = 'list-group-item';
+            dataList.appendChild(listItem);
+
+            // Aquí puedes agregar código para enviar los datos a un servidor o almacenarlos en una base de datos.
+        });
+    </script>
+</body>
 </html>

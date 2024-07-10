@@ -15,5 +15,29 @@
   "workspaces": [
     "src/clear_backend",
     "src/clear_frontend"
-  ]
+  ],
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21"
+  },
+  "version": "1.0.0",
+  "description": "Welcome to your new `clear` project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielLuna11/pr.git"
+  },
+  "author": "DanielLuna11",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielLuna11/pr/issues"
+  },
+  "homepage": "https://github.com/DanielLuna11/pr#readme"
 }
